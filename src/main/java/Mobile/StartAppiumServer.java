@@ -6,14 +6,12 @@ import org.apache.commons.exec.CommandLine;
 import org.apache.commons.exec.DefaultExecuteResultHandler;
 import org.apache.commons.exec.DefaultExecutor;
 
-import io.appium.java_client.service.local.AppiumDriverLocalService;
-
 public class StartAppiumServer {
 	public void startServer() {
 
 		// Setup Appium Server Variables
-		CommandLine cmd = new CommandLine("C:\\Program Files (x86)\\Appium\\node.exe");
-		cmd.addArgument("C:\\Program Files (x86)\\Appium\\node_modules\\appium\\bin\\Appium.js");
+		CommandLine cmd = new CommandLine("/usr/local/bin/node");
+		cmd.addArgument("/Users/anoopambunhi/node_modules/appium/build/lib/main.js");
 		cmd.addArgument("--address");
 		cmd.addArgument("127.0.0.1");
 		cmd.addArgument("--port");
@@ -41,9 +39,9 @@ public class StartAppiumServer {
 	}
 
 	public static void main(String[] args) {
-		AppiumDriverLocalService appiumServer = AppiumDriverLocalService.buildDefaultService();
-		appiumServer.start();
-		appiumServer.stop();
+		StartAppiumServer server = new StartAppiumServer();
+		server.startServer();
+		server.stopServer();
 	}
 
 }
