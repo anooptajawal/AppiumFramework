@@ -9,6 +9,8 @@ import org.apache.commons.exec.DefaultExecutor;
 public class StartAppiumServer {
 	private String nodePath = "/usr/local/bin/node";
 	private String mainPath = "/Users/anoopambunhi/node_modules/appium/build/lib/main.js";
+	private String ip = "127.0.0.1";
+	private String port = "4723";
 
 	public void startServer() {
 
@@ -16,9 +18,9 @@ public class StartAppiumServer {
 		CommandLine cmd = new CommandLine(nodePath);
 		cmd.addArgument(mainPath);
 		cmd.addArgument("--address");
-		cmd.addArgument("127.0.0.1");
+		cmd.addArgument(ip);
 		cmd.addArgument("--port");
-		cmd.addArgument("4723");
+		cmd.addArgument(port);
 
 		// Launch the Appium Server
 		DefaultExecuteResultHandler handler = new DefaultExecuteResultHandler();
