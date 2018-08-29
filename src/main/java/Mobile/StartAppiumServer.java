@@ -7,11 +7,14 @@ import org.apache.commons.exec.DefaultExecuteResultHandler;
 import org.apache.commons.exec.DefaultExecutor;
 
 public class StartAppiumServer {
+	private String nodePath = "/usr/local/bin/node";
+	private String mainPath = "/Users/anoopambunhi/node_modules/appium/build/lib/main.js";
+
 	public void startServer() {
 
 		// Setup Appium Server Variables
-		CommandLine cmd = new CommandLine("/usr/local/bin/node");
-		cmd.addArgument("/Users/anoopambunhi/node_modules/appium/build/lib/main.js");
+		CommandLine cmd = new CommandLine(nodePath);
+		cmd.addArgument(mainPath);
 		cmd.addArgument("--address");
 		cmd.addArgument("127.0.0.1");
 		cmd.addArgument("--port");
