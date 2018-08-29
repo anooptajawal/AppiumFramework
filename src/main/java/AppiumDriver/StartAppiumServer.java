@@ -1,4 +1,4 @@
-package Mobile;
+package AppiumDriver;
 
 import java.io.IOException;
 
@@ -6,11 +6,14 @@ import org.apache.commons.exec.CommandLine;
 import org.apache.commons.exec.DefaultExecuteResultHandler;
 import org.apache.commons.exec.DefaultExecutor;
 
+import io.appium.java_client.service.local.AppiumDriverLocalService;
+
 public class StartAppiumServer {
 	private String nodePath = "/usr/local/bin/node";
 	private String mainPath = "/Users/anoopambunhi/node_modules/appium/build/lib/main.js";
 	private String ip = "127.0.0.1";
-	private String port = "4723";
+	private String port = "4724";
+	AppiumDriverLocalService service;
 
 	public void startServer() {
 
@@ -35,17 +38,16 @@ public class StartAppiumServer {
 	}
 
 	public void stopServer() {
-		Runtime runtime = Runtime.getRuntime();
-		try {
-			runtime.exec("taskkill /F /IM node.exe");
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+
+		// Runtime runtime = Runtime.getRuntime();
+		// runtime.exec("driver.quit();");
+		service.stop();
 	}
 
 	public static void main(String[] args) {
 		StartAppiumServer server = new StartAppiumServer();
-		server.startServer();
+
+		// server.startServer();
 		server.stopServer();
 	}
 

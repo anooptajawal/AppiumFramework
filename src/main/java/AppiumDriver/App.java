@@ -1,4 +1,4 @@
-package Mobile;
+package AppiumDriver;
 
 /**
  * Hello world!
