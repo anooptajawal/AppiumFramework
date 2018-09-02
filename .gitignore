@@ -26,3 +26,6 @@ hs_err_pid*
 .project
 .settings/
 test-output/
+target/
+.idea/
+AppiumFramework.iml
