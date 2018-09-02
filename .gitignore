@@ -28,4 +28,6 @@ hs_err_pid*
 test-output/
 target/
 .idea/
+.gradle/
 AppiumFramework.iml
+.gradle/4.10/fileHashes/fileHashes.bin
