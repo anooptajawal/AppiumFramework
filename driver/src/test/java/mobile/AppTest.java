@@ -1,4 +1,4 @@
-package Mobile;
+package mobile;
 
 import org.testng.annotations.Test;
 
