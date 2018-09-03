@@ -1,4 +1,5 @@
 rootProject.name = 'tajawal'
 include 'uatest'
 include 'driver'
+include 'regressiontest'
 

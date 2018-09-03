@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<suite name="Automation Tests">
+    <test name="Smoke Tests">
+        <packages>
+            <package name="testngpkg"/>
+        </packages>
+    </test>
+</suite>
