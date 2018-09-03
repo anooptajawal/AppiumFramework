@@ -31,3 +31,5 @@ target/
 .gradle/
 AppiumFramework.iml
 .gradle/4.10/fileHashes/fileHashes.bin
+*.bin
+*.lock
