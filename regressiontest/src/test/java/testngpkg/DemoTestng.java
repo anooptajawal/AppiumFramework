@@ -1,3 +1,5 @@
+package testngpkg;
+
 import org.testng.annotations.*;
 
 public class DemoTestng {
