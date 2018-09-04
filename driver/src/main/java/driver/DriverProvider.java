@@ -5,6 +5,6 @@ import org.openqa.selenium.WebElement;
 
 import java.net.MalformedURLException;
 
-interface DriverProvider {
+public interface DriverProvider {
     AppiumDriver<? extends WebElement> get() throws MalformedURLException;
 }
