@@ -39,7 +39,7 @@ public class TajawalTest extends DesiredCapabilityAndroid {
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("navigationButtonIcon")));
 
-        //Open the side menu
+        //Open the flights home screen
         driver.findElementById("navigationButtonIcon").click();
     }
 
