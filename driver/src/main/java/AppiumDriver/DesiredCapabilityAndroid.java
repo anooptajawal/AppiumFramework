@@ -2,6 +2,7 @@ package AppiumDriver;
 
 import java.net.URL;
 
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -9,8 +10,8 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.net.MalformedURLException;
 
 public class DesiredCapabilityAndroid {
-    public static AndroidDriver<AndroidElement> capabilities() throws MalformedURLException {
-        AndroidDriver<AndroidElement> driver;
+    public static AndroidDriver<?> capabilities() throws MalformedURLException {
+        AndroidDriver<?> driver;
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
         //Platform Name

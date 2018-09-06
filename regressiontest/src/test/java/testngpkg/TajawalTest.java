@@ -1,24 +1,35 @@
 package testngpkg;
 
 import AppiumDriver.DesiredCapabilityAndroid;
-import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.AndroidElement;
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
 import java.util.concurrent.TimeUnit;
 
 public class TajawalTest extends DesiredCapabilityAndroid {
-    private String buttonText = "Continue";
+
+    private AndroidDriver driver;
+    private WebDriverWait wait;
+
+
+    @BeforeTest
+    private void setUp() throws MalformedURLException {
+        driver = capabilities();
+        wait = new WebDriverWait(driver, 20);
+    }
 
     @Test
-    public void selectPOS() throws MalformedURLException {
-        AndroidDriver<AndroidElement> driver = capabilities();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        MobileElement element = (MobileElement) driver.findElementById("action_sticky_textview");
-        String text = element.getText();
+    private void selectPOS() {
+        String buttonText = "Continue";
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        String text = driver.findElementById("action_sticky_textview").getText();
 
         // Assert actual text on button is equal to expected
         Assert.assertEquals(text, buttonText);
@@ -26,9 +37,15 @@ public class TajawalTest extends DesiredCapabilityAndroid {
         // Click the continue button
         driver.findElementById("action_sticky_textview").click();
 
-        //Open the side menu
-        driver.findElementById("burger").click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("navigationButtonIcon")));
 
+        //Open the side menu
+        driver.findElementById("navigationButtonIcon").click();
+    }
+
+    @AfterTest
+    private void closeApp() {
+        driver.closeApp();
     }
 
 }
