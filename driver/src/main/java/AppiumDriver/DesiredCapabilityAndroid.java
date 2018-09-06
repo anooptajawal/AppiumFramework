@@ -29,7 +29,7 @@ public class DesiredCapabilityAndroid {
         capabilities.setCapability("autoAcceptAlerts", true);
 
         //App Package Name
-        capabilities.setCapability("appPackage", "com.travel.almosafer.debug");
+        capabilities.setCapability("appPackage", "com.tajawal.debug");
 
         //App Activity Name
         capabilities.setCapability("appActivity", "com.tajawal.splash.SplashActivity");
