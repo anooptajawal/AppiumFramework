@@ -12,7 +12,7 @@ repositories {
 }
 
 dependencies {
-    compile group: 'io.appium', name: 'java-client', version:'4.1.2'
+    compile group: 'io.appium', name: 'java-client', version:'5.0.4'
     compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version:'3.14.0'
     compile group: 'commons-validator', name: 'commons-validator', version:'1.4.0'
     compile group: 'com.google.guava', name: 'guava', version:'21.0'
