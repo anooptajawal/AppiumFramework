@@ -6,8 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class iospageobject {
-    public iospageobject(AppiumDriver driver) {
+public class IosPageObject {
+    public IosPageObject(AppiumDriver driver) {
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 
     }

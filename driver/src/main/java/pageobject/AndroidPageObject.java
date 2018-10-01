@@ -6,8 +6,8 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
-public class androidpageobject {
-    public androidpageobject(AppiumDriver driver) {
+public class AndroidPageObject {
+    public AndroidPageObject(AppiumDriver driver) {
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 
     }
@@ -17,5 +17,4 @@ public class androidpageobject {
 
     @AndroidFindBy(id = "navigationButtonIcon")
     public WebElement burgerMenu;
-
 }
